@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block links %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="main">
+    <p class="headline" align="center">Select Stock</p>
+    <div class="stocks">
+        <ul>
+            <li>
+                <a href="{{ url_for('home.prediction', legend='UBER') }}">
+                    UBER
+                </a>
+
+            </li>
+            <li>
+                <a href="{{ url_for('home.prediction', legend='BTC-USD') }}">
+                    BTC-USD
+                </a>
+                
+            </li>
+            <li>
+                <a href="{{ url_for('home.prediction', legend='ETH-USD') }}">
+                    ETH-USD
+                </a>
+            </li>
+            <li>
+                <a href="{{ url_for('home.prediction', legend='^IXIC') }}">
+                    ^IXIC
+                </a>
+            </li>
+            <li>
+                <a href="{{ url_for('home.prediction', legend='GC=F') }}">
+                    GC=F
+                </a>
+            </li>
+        </ul>
+    </div>
+    
+</div>
+{% endblock %}
+

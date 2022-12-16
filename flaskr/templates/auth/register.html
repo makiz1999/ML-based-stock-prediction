@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block links %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/register.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="main">
+  <p class="register" align="center">Register</p>
+  <form class="form1" action="{{ url_for('auth.register') }}" method="post">
+    <input class="email" type="text" align="center" name='first_name' placeholder="First Name">
+    <input class="email" type="text" align="center" name='last_name' placeholder="Last Name">
+    <input class="email" type="text" align="center" name='email' placeholder="Email">
+    <input class="pass" type="password" name='password' align="center" placeholder="Password">
+    <input class="pass" type="password" align="center" placeholder=" Retype Password">
+    <select class="security-question" name='security_question' align="center">
+      <option value="0" hidden>Select security question</option>
+      <option value="1">Name of your first pet?</option>
+      <option value="2">Your birth city?</option>
+      <option value="3">Your nickname?</option>
+    </select>
+    <input class="email" type="text" align="center" name='answer' placeholder="Answer">
+    <button class="submit" align="center" type="submit" >Register</button>
+  </form>     
+</div>
+{% endblock %}

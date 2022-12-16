@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block links %}
+<meta property="labels" content="{{labels}}" />
+<meta property="values" content="{{values}}" />
+<meta property="legend" content="{{legend}}" />
+<link rel="stylesheet" href="{{ url_for('static', filename='css/prediction.css') }}">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+<script src="{{url_for('static', filename='js/predict.js')}}"></script>
+<script>
+    window.onload = function() {
+        drawChart();
+    };
+</script>
+
+
+{% endblock %}
+
+{% block content %}
+<div class="prediction">
+    <p class="name-text" align="center">{{legend}}</p>
+    <p class="prediction-text" align="center">Predicted Price: <span class="prediction-value">{{values[20] | round(2)}}</span></p>
+
+</div>
+<div class="chart">
+    <canvas id="myChart" width="600" height="400"></canvas>
+</div>
+{% endblock %}

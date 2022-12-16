@@ -1,0 +1,20 @@
+DROP TABLE IF EXISTS user;
+DROP TABLE IF EXISTS prediction;
+
+CREATE TABLE user (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  first_name TEXT NOT NULL,
+  last_name TEXT NOT NULL,
+  email TEXT UNIQUE NOT NULL,
+  security_question INTEGER NOT NULL,
+  answer TEXT NOT NULL,
+  password TEXT NOT NULL
+);
+
+CREATE TABLE prediction (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  legend TEXT NOT NULL,
+  labels TEXT NOT NULL,
+  prices TEXT NOT NULL,
+  prediction_date TEXT NOT NULL
+);
